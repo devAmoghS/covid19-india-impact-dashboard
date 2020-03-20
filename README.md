@@ -1,8 +1,8 @@
 # covid19-india-impact-dashboard
 This is a dashboard to track COVID-19 cases in India. Python Flask App with visuals in Dash
 
-# Demo
-[!(https://github.com/devAmoghS/covid19-india-impact-dashboard/blob/master/demo.mp4)]
+# Demo (Duration: 59 seconds)
+![COVID-19 India Impact Demo](https://github.com/devAmoghS/covid19-india-impact-dashboard/blob/master/demo.gif)
 
 
 # About:
