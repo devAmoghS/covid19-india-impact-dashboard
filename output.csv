@@ -1,0 +1,23 @@
+S. No.,Name of State / UT,Confirmed cases (Indians),Confirmed cases (Foreigners),Cured/Discharged,Death
+
+1,Andhra Pradesh,3,0,0,0
+2,Chhattisgarh,1,0,0,0
+3,Delhi,16,1,5,1
+4,Gujarat,5,0,0,0
+5,Haryana,3,14,0,0
+6,Karnataka,15,0,1,1
+7,Kerala,26,2,3,0
+8,Maharashtra,49,3,0,1
+9,Odisha,2,0,0,0
+10,Puducherry,1,0,0,0
+11,Punjab,2,0,0,1
+12,Rajasthan,15,2,3,0
+13,Tamil Nadu,3,0,1,0
+14,Telengana,8,9,1,0
+15,Chandigarh,1,0,0,0
+16,Jammu and Kashmir,4,0,0,0
+17,Ladakh,10,0,0,0
+18,Uttar Pradesh,22,1,9,0
+19,Uttarakhand,3,0,0,0
+20,West Bengal,2,0,0,0
+21,Total cases,191,32,23,4
