@@ -8,11 +8,11 @@ This is a dashboard to track COVID-19 cases in India. Python Flask App with visu
 
 ### About:
 
-CoronaVirus has impacted India and the number of confirmed cases are still growing. 
+CoronaVirus(COVID-19) has impacted India and the number of confirmed cases are still growing. 
 
-We can do our bit by building tools and services that can help avoid misinformation and support effective tracking.
+We can do our bit by building tools and services that can help provide accurate information from official sources in user-friendly manner and help spread awareness of gravity of situation.
 
-In an effort to do the same, I have started building a dashboard by sourcing data from Ministry of Health and Family Welfare, Government of India.
+In an effort to do the same, we have started building a dashboard by sourcing data from Ministry of Health and Family Welfare, Government of India.
 
 ### Changelog:
 Current version has:
@@ -25,3 +25,8 @@ Current version has:
 
 2. `renderDashboard.py` - Dash App that is rendered with visual components(bar graphs, KPIs) to display the dashboard
 
+### Contributors
+[Amogh Singhal](https://www.linkedin.com/in/amogh-singhal/)
+[Sourabh Inani](https://www.linkedin.com/in/sourabh-inani-5b79464a/)
+
+#### Feel free to raise a pull request to improve this repository and help our nation fight this pandemic !!!
