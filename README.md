@@ -1,5 +1,5 @@
 # covid19-india-impact-dashboard
-This is a dashboard to track COVID-19 cases in India. Python Flask App with visuals in Dash
+This is a [dashboard](http://covid19dashboard.pythonanywhere.com/) to track COVID-19 cases in India. Python Flask App with visuals in Dash
 
 ### Demo
 ### (Duration: ~ 1 minute)
