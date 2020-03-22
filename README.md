@@ -26,7 +26,7 @@ Current version has:
 2. `renderDashboard.py` - Dash App that is rendered with visual components(bar graphs, KPIs) to display the dashboard
 
 ### Contributors
-[Amogh Singhal](https://www.linkedin.com/in/amogh-singhal/)
+[Amogh Singhal](https://www.linkedin.com/in/amogh-singhal/) <br/>
 [Sourabh Inani](https://www.linkedin.com/in/sourabh-inani-5b79464a/)
 
 #### Feel free to raise a pull request to improve this repository and help our nation fight this pandemic !!!
