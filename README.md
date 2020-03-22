@@ -14,6 +14,13 @@ We can do our bit by building tools and services that can help provide accurate 
 
 In an effort to do the same, we have started building a dashboard by sourcing data from Ministry of Health and Family Welfare, Government of India.
 
+
+### Contributors
+[Amogh Singhal](https://www.linkedin.com/in/amogh-singhal/) <br/>
+[Sourabh Inani](https://www.linkedin.com/in/sourabh-inani-5b79464a/)
+
+#### Feel free to raise a pull request to improve this repository and help our nation fight this pandemic !!!
+
 ### Changelog:
 Current version has:
 1. Interactive Table to sort and filter data
@@ -24,9 +31,3 @@ Current version has:
 1. `parseData_BeautifulSoup.py` - Parser made in BeautifulSoup to scrape data from Ministry of Health & Public Welfare, Govermnent of India
 
 2. `renderDashboard.py` - Dash App that is rendered with visual components(bar graphs, KPIs) to display the dashboard
-
-### Contributors
-[Amogh Singhal](https://www.linkedin.com/in/amogh-singhal/) <br/>
-[Sourabh Inani](https://www.linkedin.com/in/sourabh-inani-5b79464a/)
-
-#### Feel free to raise a pull request to improve this repository and help our nation fight this pandemic !!!
