@@ -31,3 +31,8 @@ Current version has:
 1. `parseData_BeautifulSoup.py` - Parser made in BeautifulSoup to scrape data from Ministry of Health & Public Welfare, Govermnent of India
 
 2. `renderDashboard.py` - Dash App that is rendered with visual components(bar graphs, KPIs) to display the dashboard
+
+#### Huge Shout-out to people at pythonanywhere.com for helping us taking this live
+[Giles Thomas](https://www.linkedin.com/in/gilesthomas/)
+[Glenn Jones](https://www.linkedin.com/in/glenn-jones-3503b81/)
+[Filip Lajszczak](https://www.linkedin.com/in/filip-lajszczak-05562388/)
