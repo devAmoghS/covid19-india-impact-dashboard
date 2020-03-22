@@ -10,8 +10,9 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 BUTTON_STYLE = {
     'margin': '15px'
 }
+FILE_PATH='/home/covid19dashboard/Covid19India/output.csv'
 
-df = pd.read_csv('./output.csv')
+df = pd.read_csv(FILE_PATH)
 print(df)
 # Adding new columns for fatality and survival ratio
 df['Fatality Rate %'] = round(df['Death'].astype(float) * 100 / (df['Confirmed cases (Foreigners)'] + df['Confirmed cases (Indians)']), 2)
@@ -65,7 +66,13 @@ app.layout = html.Div([
             )
         ]),
         dcc.Tab(label='Bar-Graphs', children=[
-            html.Div(id='datatable-interactivity-container')
+            dcc.Loading(
+                id="loading-icon",
+                children=[
+                    html.Div(id='datatable-interactivity-container')
+                ],
+                type="circle"
+            )
         ]),
         dcc.Tab(label='KPIs', children=[
             dbc.Button(
@@ -104,6 +111,7 @@ app.layout = html.Div([
     ])
 ])
 
+@app.callback(Output("loading-icon", "children"))
 
 @app.callback(
     Output('datatable-interactivity', 'style_data_conditional'),
