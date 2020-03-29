@@ -19,6 +19,12 @@ In an effort to do the same, we have started building a dashboard by sourcing da
 [Amogh Singhal](https://www.linkedin.com/in/amogh-singhal/) <br/>
 [Sourabh Inani](https://www.linkedin.com/in/sourabh-inani-5b79464a/)
 
+### Installation
+1. Use `pipenv` or `virtualenv` to setup a virtual environment for the project
+2. Activate the environment
+3. Change directory to the location where `requirements.txt` is present.
+4. Use the following command: `pip install -r requirements.txt`
+
 #### Feel free to raise a pull request to improve this repository and help our nation fight this pandemic !!!
 
 ### Changelog:
