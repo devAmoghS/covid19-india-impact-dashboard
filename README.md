@@ -1,4 +1,4 @@
-# covid19-india-impact-dashboard
+# covid19-india-impact-dashboard ![GitHub stars](https://img.shields.io/github/stars/devAmoghS/covid19-india-impact-dashboard?style=for-the-badge)  ![GitHub forks](https://img.shields.io/github/forks/devAmoghS/covid19-india-impact-dashboard?label=Forks&style=for-the-badge)
 This is a [dashboard](http://covid19dashboard.pythonanywhere.com/) to track COVID-19 cases in India. Python Flask App with visuals in Dash
 
 ### Demo
