@@ -36,6 +36,11 @@ state_most_cases = df2[df2['Confirmed cases (Indians)'] == df2['Confirmed cases 
 state_kpi1 = state_most_cases['Name of State / UT'] + " " + str(state_most_cases['Confirmed cases (Indians)'].values)
 
 state_most_cured = df2[df2['Cured/Discharged'] == df2['Cured/Discharged'].max()]
+
+# If more than one state have same number of cured cases, pick one with `higher Survival Rate %`
+if len(state_most_cured.index) > 1:
+    state_most_cured = state_most_cured[state_most_cured['Survival Rate %'] == state_most_cured['Survival Rate %'].max()]
+    
 state_kpi2 = state_most_cured['Name of State / UT'] + " " + str(state_most_cured['Cured/Discharged'].values)
 # print(df)
 
@@ -49,7 +54,7 @@ app.layout = html.Div([
                     {"name": i, "id": i, "deletable": True, "selectable": True} for i in df.columns
                 ],
                 data=df.to_dict('records'),
-                editable=True,
+                editable=False,
                 filter_action="native",
                 sort_action="native",
                 sort_mode="single",
