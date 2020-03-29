@@ -5,17 +5,16 @@ import os
 
 # constants go here
 URL = 'https://www.mohfw.gov.in/'
-FILEPATH = '/home/covid19dashboard/Covid19India/output.csv'
+FILEPATH = './output.csv'
 
-# connect to the website
 try:
     os.remove(FILEPATH)
     print("File deleted successfully...")
 except:
     print("Error while deleting file ", FILEPATH)
 
+# connect to the website
 http = urllib3.PoolManager()
-
 source = http.request('GET', url=URL).data
 soup = bs.BeautifulSoup(source, 'lxml')
 
@@ -40,11 +39,15 @@ for tr in table_rows:
     td = tr.find_all('td')
     row = [i.text
                .replace('\n', '')
+               .replace('#', '')
                .replace('Union Territory of ', '')
+               .replace(' *', '')
                .replace('number of confirmed cases in India', 'cases') for i in td]
-    print(row)
+    print(row, len(row))
+    if len(row) < 5:
+        continue
     if len(row) == 5:
-        row.insert(0, str(row_count))
+        row.insert(0, str(row_count+1))
     output_rows.append(row)
     row_count += 1
 
