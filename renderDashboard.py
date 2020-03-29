@@ -6,47 +6,44 @@ import dash_table
 import pandas as pd
 from dash.dependencies import Input, Output
 
-# constants go here
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 BUTTON_STYLE = {
     'margin': '15px'
 }
-FILE_PATH='/home/covid19dashboard/Covid19India/output.csv'
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-df = pd.read_csv(FILE_PATH)
+df = pd.read_csv('./output.csv')
 # print(df)
-
 # Adding new columns for fatality and survival ratio
-df['Fatality Rate %'] = round(df['Death'].astype(float) * 100 / (df['Confirmed cases (Foreigners)'] + df['Confirmed cases (Indians)']), 2)
-df['Survival Rate %'] = round(df['Cured/Discharged'].astype(float) * 100 / (df['Confirmed cases (Foreigners)'] + df['Confirmed cases (Indians)']), 2)
-
-total = df.tail(n=1)
-df2 = df.iloc[:-1]
+df['Fatality Rate %'] = round(df['Death'].astype(float) * 100 / df['Total Confirmed cases'], 2)
+df['Survival Rate %'] = round(df['Cured/Discharged'].astype(float) * 100 / df['Total Confirmed cases'], 2)
 
 # Calculate KPIs here
-states_effected = int(max(total['S. No.'])) - 1
-confirmed = int(total['Confirmed cases (Foreigners)']) + int(total['Confirmed cases (Indians)'])
-cured = int(total['Cured/Discharged'])
-deaths = int(total['Death'])
+states_effected = len(df)
 
-recovered = int(cured * 100 / confirmed)
+confirmed = df['Total Confirmed cases'].sum()
+cured = df['Cured/Discharged'].sum()
+deaths = df['Death'].sum()
+
+recovered_perc = round(float(cured * 100 / confirmed),2)
 serious = confirmed - cured - deaths
 fatality_ratio = round(float(deaths * 100 / confirmed), 2)
 
-state_most_cases = df2[df2['Confirmed cases (Indians)'] == df2['Confirmed cases (Indians)'].max()]
-state_kpi1 = state_most_cases['Name of State / UT'] + " " + str(state_most_cases['Confirmed cases (Indians)'].values)
+state_most_cases = df[df['Total Confirmed cases'] == df['Total Confirmed cases'].max()]
+state_kpi1 = state_most_cases['Name of State / UT'] + " " + str(state_most_cases['Total Confirmed cases'].values)
 
-state_most_cured = df2[df2['Cured/Discharged'] == df2['Cured/Discharged'].max()]
+state_most_cured = df[df['Cured/Discharged'] == df['Cured/Discharged'].max()]
 
 # If more than one state have same number of cured cases, pick one with `higher Survival Rate %`
 if len(state_most_cured.index) > 1:
     state_most_cured = state_most_cured[state_most_cured['Survival Rate %'] == state_most_cured['Survival Rate %'].max()]
-    
+
 state_kpi2 = state_most_cured['Name of State / UT'] + " " + str(state_most_cured['Cured/Discharged'].values)
 # print(df)
 
 app.layout = html.Div([
-    html.H1(children='COVID-19 India Impact Dashboard', style={'textAlign': 'center'}),
+    html.H1(children='COVID-19 India Impact Dashboard', style={
+        'textAlign': 'center',
+    }),
     dcc.Tabs([
         dcc.Tab(label='Table', children=[
             dash_table.DataTable(
@@ -81,6 +78,11 @@ app.layout = html.Div([
             )
         ]),
         dcc.Tab(label='KPIs', children=[
+            html.Div([
+                dcc.Interval(id='interval1', interval=1000, n_intervals=-1000),
+                html.H1(id='label1', children='')
+            ]),
+            html.Br(),
             dbc.Button(
                 ["Confirmed Cases", dbc.Badge(confirmed, color="light", className="ml-1 h1")],
                 color="dark", style=BUTTON_STYLE),
@@ -91,11 +93,11 @@ app.layout = html.Div([
             html.Br(),
             dbc.Button(
                 ["Recovered Cases",
-                 dbc.Badge(str(cured) + " (" + str(recovered) + "%)", color="light", className="ml-1 h1")],
+                 dbc.Badge(str(cured) + " (" + str(recovered_perc) + "%)", color="light", className="ml-1 h1")],
                 color="success", style=BUTTON_STYLE),
             html.Br(),
             dbc.Button(
-                ["Deaths", dbc.Badge(int(total['Death']), color="light", className="ml-1 h1")],
+                ["Deaths", dbc.Badge(deaths, color="light", className="ml-1 h1")],
                 color="danger", style=BUTTON_STYLE),
             html.Br(),
             dbc.Button(
@@ -185,7 +187,7 @@ def update_graphs(rows, derived_virtual_selected_rows):
         # check if column exists - user may have deleted it
         # If `column.deletable=False`, then you don't
         # need to do this check.
-        for column in ["Confirmed cases (Indians)", "Confirmed cases (Foreigners)", "Cured/Discharged", "Death"] if
+        for column in ["Total Confirmed cases", "Cured/Discharged", "Death"] if
         column in dff
     ]
 

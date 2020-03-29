@@ -29,8 +29,7 @@ output_rows = []
 row_count = 0
 headers = ["S. No."
     ,"Name of State / UT"
-    ,"Confirmed cases (Indians)"
-    ,"Confirmed cases (Foreigners)"
+    ,"Total Confirmed cases"
     ,"Cured/Discharged"
     ,"Death"]
 
