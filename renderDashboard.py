@@ -6,14 +6,16 @@ import dash_table
 import pandas as pd
 from dash.dependencies import Input, Output
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+# constants go here
 BUTTON_STYLE = {
     'margin': '15px'
 }
 FILE_PATH='/home/covid19dashboard/Covid19India/output.csv'
 
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 df = pd.read_csv(FILE_PATH)
-print(df)
+# print(df)
+
 # Adding new columns for fatality and survival ratio
 df['Fatality Rate %'] = round(df['Death'].astype(float) * 100 / (df['Confirmed cases (Foreigners)'] + df['Confirmed cases (Indians)']), 2)
 df['Survival Rate %'] = round(df['Cured/Discharged'].astype(float) * 100 / (df['Confirmed cases (Foreigners)'] + df['Confirmed cases (Indians)']), 2)
@@ -23,7 +25,6 @@ df2 = df.iloc[:-1]
 
 # Calculate KPIs here
 states_effected = int(max(total['S. No.'])) - 1
-
 confirmed = int(total['Confirmed cases (Foreigners)']) + int(total['Confirmed cases (Indians)'])
 cured = int(total['Cured/Discharged'])
 deaths = int(total['Death'])
