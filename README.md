@@ -16,7 +16,7 @@ In an effort to do the same, we have started building a dashboard by sourcing da
 
 ### Blog
 If you want to learn about how this idea got translated into code, you can the blog post here.
-![Tracking the COVID-19 outbreak in India using Python](https://medium.com/swlh/tracking-the-covid-19-outbreak-in-india-using-python-c938eb824ba3?source=friends_link&sk=b83073428d916ab0d11aba24e0133453)
+[Tracking the COVID-19 outbreak in India using Python](https://medium.com/swlh/tracking-the-covid-19-outbreak-in-india-using-python-c938eb824ba3?source=friends_link&sk=b83073428d916ab0d11aba24e0133453)
 
 ### Contributors
 [Amogh Singhal](https://www.linkedin.com/in/amogh-singhal/) <br/>
