@@ -15,7 +15,8 @@ We can do our bit by building tools and services that can help provide accurate 
 In an effort to do the same, we have started building a dashboard by sourcing data from Ministry of Health and Family Welfare, Government of India.
 
 ### Blog
-If you want to learn about how this idea got translated into code, you can the blog post here.
+If you want to learn about how this idea got translated into code, you can read the blog post here.
+
 [Tracking the COVID-19 outbreak in India using Python](https://medium.com/swlh/tracking-the-covid-19-outbreak-in-india-using-python-c938eb824ba3?source=friends_link&sk=b83073428d916ab0d11aba24e0133453)
 
 ### Contributors
