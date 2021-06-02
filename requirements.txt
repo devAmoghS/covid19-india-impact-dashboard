@@ -3,6 +3,6 @@ dash_html_components==1.0.2
 dash_core_components==1.8.1
 dash==1.9.1
 pandas==1.0.3
-urllib3==1.25.8
+urllib3==1.26.5
 dash_table==4.6.1
 beautifulsoup4==4.8.2
